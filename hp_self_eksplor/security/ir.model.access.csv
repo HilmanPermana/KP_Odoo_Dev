@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hp_self_eksplor_hp_self_eksplor,hp_self_eksplor.hp_self_eksplor,model_hp_self_eksplor_hp_self_eksplor,base.group_user,1,1,1,1

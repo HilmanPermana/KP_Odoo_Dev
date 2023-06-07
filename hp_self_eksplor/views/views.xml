@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="hp_self_eksplor.list">
+      <field name="name">hp_self_eksplor list</field>
+      <field name="model">hp_self_eksplor.hp_self_eksplor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="hp_self_eksplor.action_window">
+      <field name="name">hp_self_eksplor window</field>
+      <field name="res_model">hp_self_eksplor.hp_self_eksplor</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="hp_self_eksplor.action_server">
+      <field name="name">hp_self_eksplor server</field>
+      <field name="model_id" ref="model_hp_self_eksplor_hp_self_eksplor"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="hp_self_eksplor" id="hp_self_eksplor.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="hp_self_eksplor.menu_1" parent="hp_self_eksplor.menu_root"/>
+    <menuitem name="Menu 2" id="hp_self_eksplor.menu_2" parent="hp_self_eksplor.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="hp_self_eksplor.menu_1_list" parent="hp_self_eksplor.menu_1"
+              action="hp_self_eksplor.action_window"/>
+    <menuitem name="Server to list" id="hp_self_eksplor" parent="hp_self_eksplor.menu_2"
+              action="hp_self_eksplor.action_server"/>
+-->
+  </data>
+</odoo>
