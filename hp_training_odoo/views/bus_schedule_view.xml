@@ -12,6 +12,7 @@
                     <field name="payment_type"/>
                     <field name="departure"/>
                     <field name="arrival"/>
+                    <field name="state"/>
                 </tree>
             </field>
         </record>
@@ -23,7 +24,10 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <h1>Bus Schedule</h1>
+                        <field name="state" widget="statusbar"/>
+                        <button name="button_submit" string="Submit" type="object" attrs="{'invisible':[('state', '!=', 'draft ')]}"/>
+                        <button name="button_run" string="Run" type="object" attrs="{'invisible':[('state', '!=', 'submit')]}"/>
+                        <button name="button_done" string="Done" type="object" attrs="{'invisible':[('state', '!=', 'run')]}"/>
                     </header>
                     <sheet>
                         <div class="oe_title">
@@ -32,30 +36,29 @@
                             </h1>
                         </div>
                         <group>
-                            <field name="bus_id"/>
-                            <field name="capacity"/>
-                            <field name="route_id"/>
-                            
+                            <field name="bus_id" attrs="{'readonly': [('state', '!=', 'draft')]}" domain="[('state', '=', 'ready')]"/>
+                            <field name="capacity" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                            <field name="route_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                         </group>
                         <group>
-                            <field name="schedule"/>
-                            <field name="payment_type"/>
+                            <field name="schedule" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="payment_type" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                         </group>
                         <group>
-                            <field name="departure"/>
-                            <field name="arrival"/>
+                            <field name="departure" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="arrival" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                         </group>
                         <notebook>
                             <page string="Passenger">
-                                <field name="passenger_ids">
+                                <field name="passenger_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
                                     <tree>
-                                        <field name="name"/>
-                                        <field name="gender"/>
+                                        <field name="name" />
+                                        <field name="gender" />
                                     </tree>
                                 </field>
                             </page>
                             <page string="Baggage">
-                                <field name="baggage_line_ids">
+                                <field name="baggage_line_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
                                     <tree editable="bottom">
                                         <field name="name"/>
                                         <field name="weight"/>

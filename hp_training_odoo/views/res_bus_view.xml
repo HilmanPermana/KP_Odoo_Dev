@@ -10,7 +10,7 @@
                     <field name="name"/>
                     <field name="code"/>
                     <field name="capacity"/>
-                    <field name="image"/>
+                    <field name="state"/>
                 </tree>
             </field>
         </record>
@@ -22,12 +22,12 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <h3>Bus</h3>
+                        <field name="state" widget="statusbar" options="{'clickable':'1'}"/>
                     </header>
                     <sheet>
                         <div class="oe_title">
                             <h1>
-                                <field name="name"/>
+                                <field name="state" widget="statusbar" options="{'clickable':'1' }"/>                                                                                                                                     
                             </h1>
                         </div>
                         <group>
