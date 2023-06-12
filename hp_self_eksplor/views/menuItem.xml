@@ -1,0 +1,28 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <menuitem
+            id="root_menu_patient"
+            name="Patient"
+            web_icon="path_icon_untuk_di_menu_awal"
+        />
+
+        <menuitem
+            id="res_history_patient_menu"
+            name="History"
+            parent="root_menu_patient"
+            action="res_history_patient_action"
+        />
+
+        <record id="res_history_patient_action" model="ir.actions.act_window">
+            <field name="name"></field>
+            <field name="res_model">res.patient</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+    </data>
+</odoo>

@@ -51,7 +51,6 @@ class BusSchedule(models.Model):
     )
     
 
-
     @api.model
     def create(self, vals):
         result = super(BusSchedule, self).create(vals)

@@ -17,7 +17,7 @@
             "args": [
                 "--config=C:/Program Files/Odoo 14/server/odoo.conf",
                 "--database=hilman_db",
-                "--update=hp_training_odoo"
+                "--update=hp_training_odoo" //Automatic Update Module
             ]
         }
     ]

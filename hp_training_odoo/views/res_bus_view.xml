@@ -10,7 +10,14 @@
                     <field name="name"/>
                     <field name="code"/>
                     <field name="capacity"/>
-                    <field name="state"/>
+                    <field 
+                        name="state" 
+                        widget="badge" 
+                        decoration-success="state == 'ready'"
+                        decoration-warning="state == 'mt'" 
+                        decoration-danger="state == 'depr'"
+                        decoration-muted="state == 'draft'"
+                    />
                 </tree>
             </field>
         </record>
@@ -32,11 +39,12 @@
                         </div>
                         <group>
                             <group>
+                                <field name="name"/>
                                 <field name="code"/>
                                 <field name="capacity"/>
                             </group>
                             <group>
-                                <field name="image"/>
+                                <field name="image" widget="image" class="oe_avatar" no-label="1"/>
                             </group>
                         </group>
                     </sheet>

@@ -21,6 +21,7 @@
           <field name="res_model">res.passenger</field>
           <field name="view_mode">tree,form</field>
       </record>
+
         <!-- schedule -->
       <menuitem
           id="bus_schedule_menu"
@@ -33,18 +34,45 @@
           <field name="res_model">bus.schedule</field>
           <field name="view_mode">tree,form</field>
       </record>
+
         <!-- bus -->
       <menuitem
           id="res_bus_menu"
           name="Bus"
           parent="root_menu_transportation_management"
-          action="res_bus_action"
       />
       <record id="res_bus_action" model="ir.actions.act_window">
           <field name="name">Bus</field>
           <field name="res_model">res.bus</field>
           <field name="view_mode">tree,form</field>
       </record>
+
+      <!-- Submenu Bus in menu bus -->
+      <menuitem
+          id="bus_menu"
+          name="Bus"
+          parent="res_bus_menu"
+          action="res_bus_action"
+      />
+
+    <!-- Action Menu Driver -->
+    <record id="driver_action" model="ir.actions.act_window">
+        <field name="name">Driver</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="domain">[('is_driver', '=', 'True')]</field>
+        <field name="context">{
+            'default_is_driver': True,
+        }</field>
+    </record>
+
+    <!-- Submenu Driver in menu bus -->
+    <menuitem
+        id="driver_menu"
+        name="Driver"
+        parent="res_bus_menu"
+        action="driver_action"
+    />
 
       <!-- Submenu Configuration -->
       <menuitem 
@@ -53,18 +81,23 @@
         parent="root_menu_transportation_management"
       />
 
-      <!-- bus route -->
-      <menuitem 
-        id="bus_route_menu" 
-        name="Route"
-        parent="root_menu_configuration"
-        action="bus_route_action"
-      />
+      <!-- Action Bus Route -->
       <record id="bus_route_action" model="ir.actions.act_window">
           <field name="name">Bus Route</field>
           <field name="res_model">bus.route</field>
           <field name="view_mode">tree</field>
       </record>
 
+      <!-- bus route -->
+      <menuitem
+          id="bus_route_menu"
+          name="Route"
+          parent="root_menu_configuration"
+          action="bus_route_action"
+      />
+
+      
+
+     
     </data>
 </odoo>

@@ -29,6 +29,7 @@
     'data': [
         'security/ir.model.access.csv',
         'data/sequence.xml',
+        'data/data.xml',
         'views/menuItem.xml',
         'views/res_passenger_view.xml',
         'views/bus_schedule_view.xml',

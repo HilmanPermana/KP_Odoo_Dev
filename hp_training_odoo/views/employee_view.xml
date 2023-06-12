@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!-- inherit tree/form -->
         <record model="ir.ui.view" id="hp_training_odoo_inherit_hr_employee_view_form">
             <field name="name">hp_training_odoo_inherit_hr_employee_view_form</field>
             <field name="model">hr.employee</field>
-            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="inherit_id" ref="hr.view_employee_form"/> <!-- inherit from hr module, id form -->
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='coach_id']" position="replace">
-                    <field name="is_driver"/>
+                    <field name="is_driver" widget="toggle_button"/>
                 </xpath>
             </field>
         </record>
     </data>
 </odoo>
+
+
