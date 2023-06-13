@@ -4,12 +4,13 @@ from odoo.exceptions import UserError
 class BusSchedule(models.Model):
     _name = 'bus.schedule'
     _description = 'Bus Schedule'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string='Name', default="New", readonly=True)
-    schedule = fields.Datetime(string="Schedule")
+    schedule = fields.Datetime(string="Schedule", tracking=True)
     payment_type = fields.Selection([("cash","Cash"),("transfer","Transfer")], string='Payment')
-    departure = fields.Datetime(string="Departure")
-    arrival = fields.Datetime(string="Arrival")
+    departure = fields.Datetime(string="Departure", tracking=True)
+    arrival = fields.Datetime(string="Arrival", tracking=True)
     
     # relational field
     bus_id = fields.Many2one(
@@ -77,6 +78,13 @@ class BusSchedule(models.Model):
         for rec in self:
             rec.write({
                 'state':'done'
+            })
+
+    # Action Server
+    def action_server_submit():
+        for rec in self:
+            rec.write({
+                'state':'submit'
             })
     
     state = fields.Selection(

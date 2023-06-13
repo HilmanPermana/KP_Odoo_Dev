@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+
+        <!-- Kanban View
+        <record model="ir.ui.view" id="res_bus_view_kanban">
+            <field name="name">res_bus_view_kanban</field>
+            <field name="model">res.bus</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div t-attf-class="oe_kanban_global_click">
+                                    
+                                </div>  
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record> -->
         <!-- List View -->
         <record model="ir.ui.view" id="res_bus_view_tree">
             <field name="name">res_bus_view_tree</field>
@@ -48,6 +67,12 @@
                             </group>
                         </group>
                     </sheet>
+                    <!-- Logging Activity -->
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" />
+                        <field name="message_ids" widget="mail_thread" />
+                    </div>
+                    
                 </form>
             </field>
         </record>

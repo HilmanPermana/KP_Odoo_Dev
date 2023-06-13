@@ -10,42 +10,42 @@
     
       <!-- MENU ACTION -->
         <!-- passanger -->
+      <record id="res_passenger_action" model="ir.actions.act_window">
+          <field name="name">Passenger</field>
+          <field name="res_model">res.passenger</field>
+          <field name="view_mode">tree,form</field>
+      </record>
       <menuitem
           id="res_passenger_menu"
           name="Passenger"
           parent="root_menu_transportation_management"
           action="res_passenger_action"
       />
-      <record id="res_passenger_action" model="ir.actions.act_window">
-          <field name="name">Passenger</field>
-          <field name="res_model">res.passenger</field>
-          <field name="view_mode">tree,form</field>
-      </record>
 
         <!-- schedule -->
+      <record id="bus_schedule_action" model="ir.actions.act_window">
+          <field name="name">Schedule</field>
+          <field name="res_model">bus.schedule</field>
+          <field name="view_mode">tree,form</field>
+      </record>
       <menuitem
           id="bus_schedule_menu"
           name="Schedule"
           parent="root_menu_transportation_management"
           action="bus_schedule_action"
       />
-      <record id="bus_schedule_action" model="ir.actions.act_window">
-          <field name="name">Schedule</field>
-          <field name="res_model">bus.schedule</field>
-          <field name="view_mode">tree,form</field>
-      </record>
 
         <!-- bus -->
-      <menuitem
-          id="res_bus_menu"
-          name="Bus"
-          parent="root_menu_transportation_management"
-      />
       <record id="res_bus_action" model="ir.actions.act_window">
           <field name="name">Bus</field>
           <field name="res_model">res.bus</field>
           <field name="view_mode">tree,form</field>
       </record>
+      <menuitem
+          id="res_bus_menu"
+          name="Bus"
+          parent="root_menu_transportation_management"
+      />
 
       <!-- Submenu Bus in menu bus -->
       <menuitem
@@ -74,6 +74,13 @@
         action="driver_action"
     />
 
+      <!-- Action Bus Route -->
+      <record id="bus_route_action" model="ir.actions.act_window">
+          <field name="name">Bus Route</field>
+          <field name="res_model">bus.route</field>
+          <field name="view_mode">tree</field>
+      </record>
+
       <!-- Submenu Configuration -->
       <menuitem 
         id="root_menu_configuration" 
@@ -81,12 +88,6 @@
         parent="root_menu_transportation_management"
       />
 
-      <!-- Action Bus Route -->
-      <record id="bus_route_action" model="ir.actions.act_window">
-          <field name="name">Bus Route</field>
-          <field name="res_model">bus.route</field>
-          <field name="view_mode">tree</field>
-      </record>
 
       <!-- bus route -->
       <menuitem
@@ -95,9 +96,5 @@
           parent="root_menu_configuration"
           action="bus_route_action"
       />
-
-      
-
-     
     </data>
 </odoo>

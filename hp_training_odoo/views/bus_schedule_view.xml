@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
+                    <field name="bus_id"/>
                     <field name="schedule"/>
                     <field name="payment_type"/>
                     <field name="departure"/>
@@ -90,7 +91,31 @@
                             </page>
                         </notebook>
                     </sheet>
+                    <!-- Logging Activity -->
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" />
+                        <field name="message_ids" widget="mail_thread" />
+                    </div>
+                    
                 </form>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record model="ir.ui.view" id="bus_schedule_search_view">
+            <field name="name">bus_schedule_search_view</field>
+            <field name="model">bus.schedule</field>
+            <field name="arch" type="xml">
+                <search>
+                    <!-- filter -->
+                    <filter name="bus_id" string="Bus"/>
+                    <filter name="state" string="Status Draft" domain="[('state', '=', 'draft')]"/>
+                    <!-- Group By -->
+                    <group>
+                        <filter name="group_by_bus" string="Bus" context="{'group_by':'bus_id'}"/>
+                        <filter name="group_by_schedule" string="Schedule" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
             </field>
         </record>
     </data>

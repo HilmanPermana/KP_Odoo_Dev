@@ -22,7 +22,8 @@
     # any module necessary for this one to work correctly
     'depends': [
         'base',
-        'hr'
+        'hr',
+        'mail'
         ],
 
     # always loaded
@@ -30,6 +31,7 @@
         'security/ir.model.access.csv',
         'data/sequence.xml',
         'data/data.xml',
+        'data/action_server.xml',
         'views/menuItem.xml',
         'views/res_passenger_view.xml',
         'views/bus_schedule_view.xml',
