@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-
-        <!-- Kanban View
-        <record model="ir.ui.view" id="res_bus_view_kanban">
-            <field name="name">res_bus_view_kanban</field>
-            <field name="model">res.bus</field>
-            <field name="arch" type="xml">
-                <kanban class="o_kanban_mobile">
-                    <templates>
-                        <t t-name="kanban-box">
-                            <div class="oe_kanban_global_click">
-                                <div t-attf-class="oe_kanban_global_click">
-                                    
-                                </div>  
-                            </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record> -->
         <!-- List View -->
         <record model="ir.ui.view" id="res_bus_view_tree">
             <field name="name">res_bus_view_tree</field>
@@ -40,6 +21,32 @@
                 </tree>
             </field>
         </record>
+
+         <!-- Kanban View -->
+        <record model="ir.ui.view" id="res_bus_view_kanban">
+            <field name="name">res_bus_view_kanban</field>
+            <field name="model">res.bus</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click oe_kanban_inline">
+                                <field name="code"/>
+                                <div class="oe_kanban_contents">
+                                    <field name="image" widget="image" class="oe_avatar"/>
+                                    <div class="oe_title">
+                                        <label for="name" class="oe_edit_only"/>
+                                        <h1><field name="name" class="oe_inline"/></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
 
         <!-- Form View -->
         <record model="ir.ui.view" id="res_bus_view_form">

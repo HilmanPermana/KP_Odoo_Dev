@@ -38,6 +38,9 @@
         'views/res_bus_view.xml',
         'views/bus_route_view.xml',
         'views/employee_view.xml',
+        'report/bus_schedule_details_template.xml',
+        'report/bus_schedule_card_template.xml',
+        'report/report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

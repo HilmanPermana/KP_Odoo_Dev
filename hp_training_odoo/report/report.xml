@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    
+    <!-- Detail Report Action -->
+    <record id="report_schedule_details" model="ir.actions.report">
+        <field name="name">Schedule Details</field>
+        <field name="model">bus.schedule</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hp_training_odoo.report_schedule_detail</field>
+        <field name="report_file">hp_training_odoo.report_schedule_detail</field>
+        <field name="binding_model_id" ref="model_bus_schedule"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- Card Action Report -->
+    <record id="report_bus_schedule_card" model="ir.actions.report">
+        <field name="name">Schedule Card</field>
+        <field name="model">bus.schedule</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hp_training_odoo.report_bus_schdule_id_card</field>
+        <field name="report_file">hp_training_odoo.report_bus_schdule_id_card</field>
+        <field name="binding_model_id" ref="model_bus_schedule"/>
+        <field name="binding_type">report</field>
+    </record>
+    
+    
+</odoo>
